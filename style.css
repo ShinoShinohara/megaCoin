@@ -1,0 +1,126 @@
+ @font-face {
+     font-family: retro-gaming;
+     src: url(./font/retro-gaming.ttf) format('truetype');
+ }
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'retro-gaming', sans-serif;
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ body {
+     background-color: black;
+     color: aliceblue;
+     background-image: url(./img/fundo.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center center;
+     background-attachment: fixed;
+ }
+
+ .bgimg {
+     background-image: url(./img/fundo.jpg);
+     width: 100%;
+ }
+
+ .header {
+     padding-top: 24px;
+     height: 220px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .header-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .logo {
+     width: 100%;
+     max-width: 100px;
+     margin-bottom: 24px;
+ }
+
+ .input-container {
+     margin: 0 auto;
+     max-width: 400px;
+     padding: 24px;
+ }
+
+ input {
+     width: 100%;
+     height: 50px;
+     color: aliceblue;
+     background-color: transparent;
+ }
+
+ input[type=text] {
+     border: none;
+     border-bottom: 2px solid #C73B23;
+     border-radius: 2px;
+     background-position: 10px 10px;
+     background-repeat: no-repeat;
+     padding-left: 28px;
+     font-size: large;
+ }
+
+ textarea:focus,
+ input:focus {
+     outline: none;
+ }
+
+ table {
+     width: 100%;
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 4px;
+     font-size: 28px;
+     table-layout: fixed;
+ }
+
+ thead {
+     width: 100%;
+     max-width: 300px;
+ }
+
+ tbody {
+     display: table-row-group;
+     vertical-align: middle;
+ }
+
+ .player {
+     text-align: left;
+ }
+
+ .player img {
+     max-width: 212px;
+     width: 100%;
+ }
+
+ .mega-coin {
+     text-align: center;
+ }
+
+ .mega-coin img {
+     max-width: 212px;
+     width: 100%;
+ }
+
+ .coin {
+     text-align: center;
+ }
+
+ .coin::after {
+     vertical-align: middle;
+     content: url(./img/mega-coin.gif);
+     height: 52px;
+     margin-left: 12px;
+ }
