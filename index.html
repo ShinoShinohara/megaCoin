@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="searchBox" placeholder="Pesquisar por Nome">
+    <table class="table" id="tableid">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Mega Coins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Shino</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Vinicius Shinohara</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Vinicius Peter</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Peter Peter</td>
+                <td>2</td>
+            </tr>
+
+            <script>
+                var searchByName = document.getElementById("searchBox");
+                searchByName.addEventListener('keyup', function () {
+                    var keyword = this.value;
+                    keyword = keyword.toUpperCase();
+
+                    // testing search value
+                    // console.log(keyword);
+
+                    var tableSearch = document.getElementById('tableid');
+                    var byName = tableSearch.getElementsByTagName('tr');
+                    for (var i = 0; i < byName.length; i++) {
+                        var name_column = byName[i].getElementsByTagName('td')[0];
+                        if (name_column) {
+                            var name_value = name_column.textContent || name_column.innerText;
+                            name_value = name_value.toUpperCase();
+                            if (name_value.indexOf(keyword) > -1) {
+                                byName[i].style.display = ""; // show
+                            } else {
+                                byName[i].style.display = "none"; // hide
+                            }
+                        }
+                    }
+                });
+            </script>
+</body>
+
+</html>
