@@ -5,24 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Leaderboard</title>
     <style>
-        @import url('http://fonts.cdnfonts.com/css/maldini');
+        @font-face {
+            font-family: retro-gaming;
+            src: url(./font/retro-gaming.ttf) format('truetype');
+        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'MALDINI', sans-serif;
+            font-family: 'retro-gaming', sans-serif;
         }
 
         body {
             background-color: black;
             color: aliceblue;
+            background-image: url(./img/fundo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .bgimg {
+            background-image: url(./img/fundo.jpg);
+            width: 100%;
+            background-repeat: no-repeat;
         }
 
         .header {
-            background: linear-gradient(180deg, white 0%, gray 100%);
+            padding-top: 24px;
             height: 220px;
             display: flex;
             align-items: center;
@@ -51,12 +64,12 @@
             width: 100%;
             height: 50px;
             color: aliceblue;
-            background-color: black;
+            background-color: transparent;
         }
 
         input[type=text] {
             border: none;
-            border-bottom: 2px solid red;
+            border-bottom: 2px solid #C73B23;
             background-position: 10px 10px;
             background-repeat: no-repeat;
             padding-left: 28px;
@@ -66,7 +79,6 @@
         textarea:focus,
         input:focus {
             outline: none;
-            border-bottom: 4px solid red;
         }
 
         table {
@@ -79,6 +91,7 @@
 
         thead {
             width: 100%;
+            max-width: 300px;
         }
 
         tbody {
@@ -90,8 +103,22 @@
             text-align: left;
         }
 
+        .player img {
+            max-width: 212px;
+            width: 100%;
+        }
+
+        .name {
+            padding-left: 24px;
+        }
+
         .mega-coin {
             text-align: center;
+        }
+
+        .mega-coin img {
+            max-height: 49px;
+            width: 100%;
         }
 
         .coin {
@@ -100,7 +127,7 @@
 
         .coin::after {
             vertical-align: middle;
-            content: url(./mega-coin.gif);
+            content: url(./img/mega-coin.gif);
             height: 52px;
             margin-left: 12px;
         }
@@ -110,42 +137,41 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <img src="https://i.ibb.co/pf9jTBQ/logotext.png" alt="Mega Jr." class="logo">
-            <h1>MEGA LEADERBOARD</h1>
+            <img src="./img/logomega.png" alt="Mega Jr." class="logo">
+            <img src="./img/leaderboard.png" alt="Mega Leaderboard" style="width: 100%; max-width:600px;">
         </div>
     </header>
     <div class="input-container">
-        <input type="text" id="searchBox" placeholder="Pesquisar por Nome">
+        <input type="text" id="searchBox" placeholder="Pesquisar por nome">
     </div>
     <table id="tableid">
         <thead>
             <tr>
-                <th class="player">Player</th>
-                <th class="mega-coin">Mega Coins</th>
+                <th class="player"><img src="./img/player.png" alt="Player"></th>
+                <th class="mega-coin"><img src="./img/megacoins.png" alt="Mega Coins"></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Shino</td>
+                <td class="name">Shino</td>
                 <td class="coin">3</td>
             </tr>
             <tr>
-                <td>Vinicius Shinohara</td>
+                <td class="name">Vinicius Shinohara</td>
                 <td class="coin">4</td>
             </tr>
             <tr>
-                <td>Vinicius Peter</td>
+                <td class="name">Vinicius Peter</td>
                 <td class="coin">6</td>
             </tr>
             <tr>
-                <td>Peter</td>
+                <td class="name">Peter</td>
                 <td class="coin">1</td>
             </tr>
             <tr>
-                <td>Peter Peter</td>
+                <td class="name">Peter Peter</td>
                 <td class="coin">2</td>
             </tr>
-
             <script>
                 var searchByName = document.getElementById("searchBox");
                 searchByName.addEventListener('keyup', function () {
